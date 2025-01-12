@@ -46,7 +46,7 @@ func codeForTokenExchange(config *oauth2.Config, authCode string) *oauth2.Token 
 	return token
 }
 
-func main() {
+func runAuth() {
 	credentials := getLocalCredentials()
 
 	config := setOAuth2Config(credentials)
@@ -74,4 +74,8 @@ func main() {
 	token := codeForTokenExchange(config, authCode)
 
 	fmt.Printf("Token: %+v\n", token)
+}
+
+func main() {
+	runAuth()
 }
